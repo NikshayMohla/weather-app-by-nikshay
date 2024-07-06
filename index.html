@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App By Nikshay</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-        <script src="script.js"></script>
+    <div class="wrapper">
+        <h1>Weather App By Nikshay</h1>
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+        <div class="weateher-container">
+            <div class="grant-location-container">
+                <img src="./assets/location.png" alt="GrantAccess" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow Access to get weather info</p>
+                <button class="btn" data-grantAccess>
+                    Grant Access
+                </button>
+            </div>
+            <form class="form-container" data-searchForm>
+                <input type="text" placeholder="Search For City">
+                <button class="btn"><img src="./assets/search.png" >
+                </button>
+            </form>
+        </div>
+        <div class="loading-container">
+            <img src="./assets/loading.gif" alt="" width="150" height="150">
+            <p>loading</p>
+        </div>
+
+        <div class="user-info-container">
+            <div class="name">
+                <p data-cityName></p>
+                <img data-countryIcon>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
