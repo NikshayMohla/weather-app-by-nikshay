@@ -1,4 +1,40 @@
-const key="dd1bdb5745504f8ebf8145338240507"
+const userTab = document.querySelector("[data-userWeather]");
+const searchTab = document.querySelector("[data-searchWeather]");
+const userContainer = document.querySelector(".weather-container");
+
+const grantAccessContainer = document.querySelector(".grant-location-container");
+const searchForm = document.querySelector("[data-searchForm]");
+const loadingScreen = document.querySelector(".loading-container");
+const userInfoContainer = document.querySelector(".user-info-container");
+
+
+
+let currentTab=userTab;
+const key="dd1bdb5745504f8ebf8145338240507";
+currentTab.classList.add("current-tab");
+
+function switchTab(clickedTab){
+    if(clickedTab != currentTab){
+        currentTab.classList.remove("current-tab");
+        currentTab = clickedTab;
+        currentTab.classList.add("current-tab");
+    }
+}
+
+userTab.addEventListener("click", () => {
+    //pass clicked tab as input paramter
+    switchTab(userTab);
+});
+
+searchTab.addEventListener("click", () => {
+    //pass clicked tab as input paramter
+    switchTab(searchTab);
+});
+
+
+
+
+
 
 function renderWeatherInfo(data) {
     let newPara = document.createElement('p');
@@ -27,21 +63,21 @@ async function fetchWeatherDetails() {
 }
 
 
-function getLocation(){
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else console.log("Please provide location access");
-}
+// function getLocation(){
+//     if(navigator.geolocation){
+//         navigator.geolocation.getCurrentPosition(showPosition);
+//     }
+//     else console.log("Please provide location access");
+// }
 
-function showPosition(position)
-{
-    let lat=position.coords.latitude;
-    let long=position.coords.longitude;
+// function showPosition(position)
+// {
+//     let lat=position.coords.latitude;
+//     let long=position.coords.longitude;
 
-    console.log(lat);
-    console.log(long);
-}
+//     console.log(lat);
+//     console.log(long);
+// }
 
 
 
